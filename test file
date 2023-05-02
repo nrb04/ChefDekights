@@ -1,0 +1,45 @@
+ <Container>
+      <div className="registration-form">
+        <Form>
+          <div className="form-icon">
+            <span>
+              <i className="icon icon-user"></i>
+            </span>
+          </div>
+          <Form.Group controlId="username">
+            <Form.Control type="text" placeholder="Username" />
+          </Form.Group>
+          <Form.Group controlId="password">
+            <Form.Control type="password" placeholder="Password" />
+          </Form.Group>
+          <Form.Group controlId="email">
+            <Form.Control type="text" placeholder="Email" />
+          </Form.Group>
+          <Form.Group controlId="phone-number">
+            <Form.Control type="text" placeholder="Phone Number" />
+          </Form.Group>
+          <Form.Group controlId="birth-date">
+            <Form.Control type="text" placeholder="Birth Date" />
+          </Form.Group>
+          <Form.Group>
+            <Button variant="primary" type="button" block>
+              Create Account
+            </Button>
+          </Form.Group>
+        </Form>
+        <div className="social-media">
+          <h5>Sign up with social media</h5>
+          <div className="social-icons">
+            <a href="#">
+              <i className="icon-social-facebook" title="Facebook"></i>
+            </a>
+            <a href="#">
+              <i className="icon-social-google" title="Google"></i>
+            </a>
+            <a href="#">
+              <i className="icon-social-twitter" title="Twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </Container>

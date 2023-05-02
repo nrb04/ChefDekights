@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Carousel, Container, Row, Col, Button } from "react-bootstrap";
+
 import "./home.css";
 const Home = () => {
   return (
