@@ -1,0 +1,72 @@
+.banner_section {
+  width: 100%;
+  float: left;
+  padding: 90px 0px 100px 0px;
+}
+
+.banner_taital_main {
+  width: 100%;
+  float: left;
+  padding-top: 80px;
+}
+
+.banner_taital {
+  width: 100%;
+  font-size: 90px;
+  color: #252525;
+  font-weight: 800;
+}
+
+.tasty_text {
+  width: 100%;
+  float: left;
+  font-size: 24px;
+  color: #e38773;
+  font-weight: bold;
+}
+
+.banner_text {
+  width: 100%;
+  float: left;
+  font-size: 16px;
+  color: #4a4949;
+  margin: 0px;
+}
+
+.btn_main {
+  width: 100%;
+  float: left;
+  padding-top: 40px;
+}
+
+.about_bt {
+  width: 175px;
+  float: left;
+}
+
+.about_bt a {
+  width: 100%;
+  float: left;
+  font-size: 18px;
+  background-color: #d48272;
+  color: #fefefd;
+  text-align: center;
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.about_bt a:hover {
+  color: #fefefd;
+  background-color: #4a4949;
+}
+
+.callnow_bt {
+  width: 175px;
+  float: left;
+}
+.banner_container {
+  background-image: url("images/banner-bg.png");
+  background-size: cover;
+  background-position: center;
+  height: 524px;
+}
