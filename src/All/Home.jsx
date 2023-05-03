@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Carousel, Container, Row, Col, Button } from "react-bootstrap";
+import LazyLoad from "react-lazy-load";
 
 import "./home.css";
 const Home = () => {
@@ -72,6 +73,8 @@ const Home = () => {
           {/* Add other carousel items here */}
         </Carousel>
       </Container>
+
+      <LazyLoad></LazyLoad>
     </div>
   );
 };

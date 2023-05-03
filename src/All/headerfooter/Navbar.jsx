@@ -1,4 +1,5 @@
 import React from "react";
+import { SiCodechef } from "react-icons/si";
 import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
 const Navbar = () => {
   return (
@@ -7,7 +8,10 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg navbar-light px-5 py-3 mx-lg-5">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
-              <span className="fas fa-hotel"></span> Chef Delights
+              <span className="fal fa-hat-chef">
+                <SiCodechef />
+              </span>{" "}
+              Chef Delights
             </Link>
             <button
               className="navbar-toggler"
