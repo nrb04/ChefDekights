@@ -1,33 +1,71 @@
 import React from "react";
+import Carousel from "react-bootstrap/Carousel";
+import { Container, Row, Col, Button } from "react-bootstrap";
 
 import "./blog.css";
 const Blog = () => {
   return (
-    <div className="container d-flex justify-content-center">
-      <div className="card " style={{ maxWidth: "960px" }}>
-        <div className="row g-0">
-          <div className="col-md-4">
-            <img
-              src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp"
-              className="img-fluid"
-              alt="..."
-            />
+    <div id="cara" className="container d-flex justify-content-center">
+      <Carousel className="">
+        <Carousel.Item>
+          <div className="row ">
+            <div className="col-md-6">
+              <img
+                src="https://as1.ftcdn.net/v2/jpg/04/26/98/00/1000_F_426980001_M82CoqxTS9VjWfxcwn7NqPGhrKoaQf0d.jpg"
+                className="w-75 float-right"
+                alt="..."
+              />
+            </div>
+            <Col md={6}>
+              <div className="">
+                <h1 className="">Food you love</h1>
+                <h5 className="">Tasty Of DozeCafe</h5>
+                <p className="">
+                  more-or-less normal distribution of letters, as opposed to
+                  using
+                </p>
+                <div className="btn_main">
+                  <div className="about_bt">
+                    <Button variant="primary">About Us</Button>
+                  </div>
+                  <div className="callnow_bt active">
+                    <Button variant="primary">Call Now</Button>
+                  </div>
+                </div>
+              </div>
+            </Col>
           </div>
-          <div className="col-md-8">
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-              <p className="card-text">
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </p>
+        </Carousel.Item>
+        <Carousel.Item>
+          <div className="row ">
+            <Col md={6}>
+              <div className=" d-flex justify-content-center">
+                <h1 className="text-right">bal ta khabi</h1>
+                <h5 className="text-left">Tasty Of DozeCafe</h5>
+                <p className="">
+                  more-or-less normal distribution of letters, as opposed to
+                  using
+                </p>
+                <div className="btn_main">
+                  <div className="about_bt">
+                    <Button variant="primary">About Us</Button>
+                  </div>
+                  <div className="callnow_bt active">
+                    <Button variant="primary">Call Now</Button>
+                  </div>
+                </div>
+              </div>
+            </Col>
+            <div className="col-md-6">
+              <img
+                src="https://as2.ftcdn.net/v2/jpg/03/27/59/11/1000_F_327591184_VP4qzhqDTUDI85vkNTlg5c0M0DI1uWvG.jpg"
+                className="w-75 float-right"
+                alt="..."
+              />
             </div>
           </div>
-        </div>
-      </div>
+        </Carousel.Item>
+      </Carousel>
     </div>
   );
 };

@@ -3,7 +3,12 @@ import { Carousel, Container, Row, Col, Button } from "react-bootstrap";
 import LazyLoad from "react-lazy-load";
 
 import "./home.css";
+import { useLoaderData } from "react-router-dom";
+import ChefCard from "./chef/ChefCard";
+
 const Home = () => {
+  const chefdatas = useLoaderData();
+  console.log(chefdatas);
   return (
     <div className="banner_section layout_padding ">
       <Container className="banner_container overflow-hidden-md">
@@ -73,8 +78,11 @@ const Home = () => {
           {/* Add other carousel items here */}
         </Carousel>
       </Container>
-
-      <LazyLoad></LazyLoad>
+      <div className="">
+        {chefdatas.map((card) => (
+          <ChefCard key={card.id} card={card} />
+        ))}
+      </div>
     </div>
   );
 };
