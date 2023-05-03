@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <>
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light px-5 py-3 mx-5">
+        <nav className="navbar navbar-expand-lg navbar-light px-5 py-3 mx-lg-5">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               <span className="fas fa-hotel"></span> Chef Delights
@@ -25,20 +25,18 @@ const Navbar = () => {
                 <Link className="nav-link" to="/">
                   Home
                 </Link>
-                <Link className="nav-link" to="/signup">
-                  signup
+                <Link className="nav-link" to="/signin">
+                  SignIn
                 </Link>
-                <Link className="nav-link" to="/services">
-                  Services
+                <Link className="nav-link" to="/signup">
+                  SignUp
                 </Link>
                 <Link className="nav-link" to="/blog">
                   Blog
                 </Link>
-                <Link className="nav-link" to="/contact">
-                  Contact
-                </Link>
+
                 <Link className="nav-link" to="/apply-for-loan">
-                  Apply For Loan
+                  Contact Us
                 </Link>
               </div>
             </div>

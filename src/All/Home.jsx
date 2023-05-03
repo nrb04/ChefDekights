@@ -4,8 +4,8 @@ import { Carousel, Container, Row, Col, Button } from "react-bootstrap";
 import "./home.css";
 const Home = () => {
   return (
-    <div className="banner_section layout_padding">
-      <Container className="banner_container ">
+    <div className="banner_section layout_padding ">
+      <Container className="banner_container overflow-hidden-md">
         <Carousel>
           <Carousel.Item>
             <Row>

@@ -1,4 +1,9 @@
 import React from "react";
+import {
+  SlSocialGoogle,
+  SlSocialInstagram,
+  SlSocialFacebook,
+} from "react-icons/sl";
 import "./footer.css";
 const Footer = () => {
   return (
@@ -8,14 +13,21 @@ const Footer = () => {
         <footer>
           <div className="social">
             <a href="#">
-              <i className="icon ion-social-instagram"></i>
+              <i className="icon ion-social-instagram">
+                {" "}
+                <SlSocialInstagram />{" "}
+              </i>
             </a>
 
             <a href="#">
-              <i className="icon ion-social-twitter"></i>
+              <i className="icon ion-social-twitter">
+                <SlSocialGoogle />
+              </i>
             </a>
             <a href="#">
-              <i className="icon ion-social-facebook"></i>
+              <i className="icon ion-social-facebook">
+                <SlSocialFacebook />
+              </i>
             </a>
           </div>
           <ul className="list-inline">
