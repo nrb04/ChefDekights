@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { Carousel, Container, Row, Col, Button } from "react-bootstrap";
-import LazyLoad from "react-lazy-load";
 
 import "./home.css";
 import { useLoaderData } from "react-router-dom";
 import ChefCard from "./chef/ChefCard";
+import OurShop from "./Xtra/OurShop";
 
 const Home = () => {
   const chefdatas = useLoaderData();
@@ -78,11 +78,13 @@ const Home = () => {
           {/* Add other carousel items here */}
         </Carousel>
       </Container>
-      <div className="">
-        {chefdatas.map((card) => (
-          <ChefCard key={card.id} card={card} />
-        ))}
-      </div>
+      <Container>
+        <div className="">
+          {chefdatas.map((card) => (
+            <ChefCard key={card.id} card={card} />
+          ))}
+        </div>
+      </Container>
     </div>
   );
 };

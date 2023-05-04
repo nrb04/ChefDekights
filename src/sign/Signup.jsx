@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "./signup.css";
 import { AuthContext } from "../providers/AuthPovider";
+import { Link } from "react-router-dom";
 const Signup = () => {
   const { createUser } = useContext(AuthContext);
 
@@ -81,7 +82,10 @@ const Signup = () => {
                 </div>
                 <hr />
                 <p className="forgot-password text-right">
-                  Already registered <a href="/sign-in">sign in?</a>
+                  Already registered{" "}
+                  <Link className="nav-link" to="/signin">
+                    SignUp
+                  </Link>
                 </p>
               </form>
             </div>

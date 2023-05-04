@@ -1,11 +1,19 @@
 import React, { useContext } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  getAuth,
+  signInWithPopup,
+} from "firebase/auth";
+import app from "../firebase/firebase.config";
 import "./signup.css";
 import { AuthContext } from "../providers/AuthPovider";
-import { useNavigate } from "react-router-dom";
 const Signin = () => {
-  const { signIn } = useContext(AuthContext);
+  const { googleLogin, githubLogin, signIn } = useContext(AuthContext);
   const navigate = useNavigate();
+
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -20,6 +28,27 @@ const Signin = () => {
       })
       .catch((error) => {
         console.log(error);
+      });
+  };
+
+  const handleGithubLogin = () => {
+    githubLogin()
+      .then((result) => {
+        console.log(result.user);
+        setError("");
+      })
+      .then((error) => {
+        setError(error?.message);
+      });
+  };
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        console.log(result.user);
+        setError("");
+      })
+      .then((error) => {
+        setError(error?.message);
       });
   };
   return (
@@ -75,9 +104,27 @@ const Signin = () => {
                   </button>
                 </div>
                 <p className="forgot-password text-right">
-                  Forgot <a href="#">password?</a>
+                  not a member{" "}
+                  <Link className="nav-link" to="/signup">
+                    SignUp
+                  </Link>
                 </p>
               </form>
+
+              <Button
+                onClick={handleGoogleLogin}
+                className="btn btn-primary my-4"
+                type="submit"
+              >
+                Google Login
+              </Button>
+              <Button
+                onClick={handleGithubLogin}
+                className="btn btn-primary"
+                type="submit"
+              >
+                Github Login
+              </Button>
             </div>
           </Col>
         </Row>

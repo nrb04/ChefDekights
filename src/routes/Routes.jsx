@@ -6,6 +6,7 @@ import Signin from "../sign/Signin";
 import Chef from "../All/Chef";
 import Blog from "../All/blog/Blog";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,7 @@ const router = createBrowserRouter([
           fetch(`http://localhost:3000/data/${params.id}`),
       },
     ],
+    errorElement: <ErrorPage />,
   },
 ]);
 export default router;
