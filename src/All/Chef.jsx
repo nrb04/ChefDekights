@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthPovider";
 import { useLoaderData } from "react-router-dom";
 import "./Chef.css";
@@ -7,10 +7,12 @@ import { FcLike } from "react-icons/fc";
 import Receipe from "./racipe/Receipe";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FcBookmark } from "react-icons/fc";
 
 const Chef = () => {
   const { user } = useContext(AuthContext);
   const chefDetails = useLoaderData();
+
   const {
     id,
     picture,
@@ -22,6 +24,16 @@ const Chef = () => {
     recipes,
   } = chefDetails;
   console.log(chefDetails);
+
+  const [isToastShown, setIsToastShown] = useState(false);
+
+  const notify = () => {
+    if (!isToastShown) {
+      toast("you add it fevaroute");
+      setIsToastShown(true);
+    }
+  };
+
   return (
     <div>
       <div className="container">
@@ -49,6 +61,13 @@ const Chef = () => {
                       <FcLike size={36} /> &nbsp;{likes}
                     </>
                   </div>
+                  <div>
+                    <button onClick={notify}>
+                      <FcBookmark />
+                    </button>
+                    <ToastContainer />
+                  </div>
+
                   <div>
                     {recipes.map((c) => (
                       <Receipe key={id} c={c}></Receipe>

@@ -18,7 +18,7 @@ const Home = () => {
               <Col md={6}>
                 <div className="banner_img">
                   <img
-                    src="images/banner1.png"
+                    src="/images/banner1.png"
                     alt="Banner Image"
                     className="my-4 img-fluid"
                   />
@@ -49,7 +49,7 @@ const Home = () => {
               <Col md={6}>
                 <div className="banner_img">
                   <img
-                    src="images/banner2.png"
+                    src="/images/banner2.png"
                     alt="Banner Image"
                     className="img-fluid"
                   />
@@ -85,6 +85,7 @@ const Home = () => {
           ))}
         </div>
       </Container>
+      <OurShop></OurShop>
     </div>
   );
 };

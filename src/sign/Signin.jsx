@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -10,16 +10,30 @@ import {
 import app from "../firebase/firebase.config";
 import "./signup.css";
 import { AuthContext } from "../providers/AuthPovider";
+
 const Signin = () => {
   const { googleLogin, githubLogin, signIn } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [error, setError] = useState("");
 
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+
+    if (email === "" || password === "") {
+      setError("Please enter both email and password.");
+      return;
+    }
+
+    if (password.length < 6) {
+      setError("Password should be at least 6 characters long.");
+      return;
+    }
+
+    setError(""); // Resetting the error state
+
     signIn(email, password)
       .then((result) => {
         const logUser = result.user;
@@ -27,6 +41,7 @@ const Signin = () => {
         navigate("/");
       })
       .catch((error) => {
+        setError("Invalid email or password.");
         console.log(error);
       });
   };
@@ -37,34 +52,31 @@ const Signin = () => {
         console.log(result.user);
         setError("");
       })
-      .then((error) => {
-        setError(error?.message);
+      .catch((error) => {
+        setError(error.message);
       });
   };
+
   const handleGoogleLogin = () => {
     googleLogin()
       .then((result) => {
         console.log(result.user);
         setError("");
       })
-      .then((error) => {
-        setError(error?.message);
+      .catch((error) => {
+        setError(error.message);
       });
   };
+
   return (
     <div id="regibody">
       <div className="container-fluid px-1 py-5 mx-auto">
         <Row className="d-flex justify-content-center">
           <Col xl={4} lg={4} md={9} col={11} className="text-center">
-            <h3>REGISTRATION</h3>
-            <p className="blue-text">
-              Just answer a few questions
-              <br />
-              so that we can personalize the right experience for you.
-            </p>
+            <h3>LogIn</h3>
             <div className="card">
               <form onSubmit={handleLogin}>
-                <h3>Sign In</h3>
+                {error && <p className="text-danger">{error}</p>}
                 <div className="mb-3">
                   <label>Email address</label>
                   <input

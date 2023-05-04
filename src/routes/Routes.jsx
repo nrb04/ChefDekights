@@ -16,7 +16,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:3000/data"),
+        loader: () => fetch("https://server-tau-lemon.vercel.app/data"),
       },
       {
         path: "/signin",
@@ -34,13 +34,11 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/data/${params.id}`),
+          fetch(`https://server-tau-lemon.vercel.app/data/${params.id}`),
       },
       {
         path: "/blog",
         element: <Blog></Blog>,
-        loader: ({ params }) =>
-          fetch(`http://localhost:3000/data/${params.id}`),
       },
     ],
     errorElement: <ErrorPage />,

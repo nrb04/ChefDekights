@@ -3,6 +3,7 @@ import { Button, Nav } from "react-bootstrap";
 import { SiCodechef } from "react-icons/si";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthPovider";
+import { FcBusinessman } from "react-icons/fc";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -51,7 +52,7 @@ const Navbar = () => {
                   to="/"
                   activeClassName="active"
                 >
-                  Logout
+                  <FcBusinessman></FcBusinessman>Logout
                 </NavLink>
               ) : (
                 <>

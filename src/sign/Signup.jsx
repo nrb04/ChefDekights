@@ -28,16 +28,10 @@ const Signup = () => {
       <div className="container-fluid px-1 py-5 mx-auto">
         <Row className="d-flex justify-content-center">
           <Col xl={4} lg={4} md={9} col={10} className="text-center">
-            <h3>REGISTRATION</h3>
-            <p className="blue-text">
-              Just answer a few questions
-              <br />
-              so that we can personalize the right experience for you.
-            </p>
+            <h3>Registration</h3>
             <div className="card">
               {" "}
               <form onSubmit={handleRegister}>
-                <h3>Sign Up</h3>
                 <div className="mb-3">
                   <label>Full name</label>
                   <input
@@ -48,7 +42,7 @@ const Signup = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label>ph</label>
+                  <label>photo Url</label>
                   <input
                     name="photo"
                     type="text"
@@ -84,7 +78,7 @@ const Signup = () => {
                 <p className="forgot-password text-right">
                   Already registered{" "}
                   <Link className="nav-link" to="/signin">
-                    SignUp
+                    SignIn
                   </Link>
                 </p>
               </form>
