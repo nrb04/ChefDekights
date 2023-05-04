@@ -4,7 +4,12 @@ import { SiCodechef } from "react-icons/si";
 import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthPovider";
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
+  const handleLogout = () => {
+    logout()
+      .then()
+      .catch((error) => console.log(error));
+  };
   return (
     <>
       <div>
@@ -33,7 +38,9 @@ const Navbar = () => {
                   Home
                 </Link>
                 {user ? (
-                  <Button variant="none">Logout</Button>
+                  <Button onClick={handleLogout} variant="none">
+                    Logout
+                  </Button>
                 ) : (
                   <>
                     <Link className="nav-link" to="/signin">

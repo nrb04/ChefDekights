@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "./signup.css";
 import { AuthContext } from "../providers/AuthPovider";
+import { useNavigate } from "react-router-dom";
 const Signin = () => {
   const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -14,6 +16,7 @@ const Signin = () => {
       .then((result) => {
         const logUser = result.user;
         console.log(logUser);
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);

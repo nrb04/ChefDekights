@@ -1,10 +1,14 @@
+/* eslint-disable react/jsx-no-undef */
 import React from "react";
+import { Button } from "react-bootstrap";
 import { FcLike } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const ChefCard = ({ card }) => {
   // eslint-disable-next-line react/prop-types
-  const { picture, chefName, yearsOfExperience, numRecipes, likes, bio } = card;
+  const { id, picture, chefName, yearsOfExperience, numRecipes, likes, bio } =
+    card;
   return (
     <div>
       <div className="container">
@@ -33,6 +37,10 @@ const ChefCard = ({ card }) => {
                     </>
                   </div>
                 </div>
+
+                <Link to={`/chef/${id}`}>
+                  <Button>See More</Button>
+                </Link>
               </div>
             </div>
           </div>
