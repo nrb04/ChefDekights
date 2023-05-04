@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Button } from "react-bootstrap";
 import { SiCodechef } from "react-icons/si";
 import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthPovider";
 const Navbar = () => {
+  const { user } = useContext(AuthContext);
   return (
     <>
       <div>
@@ -29,12 +32,18 @@ const Navbar = () => {
                 <Link className="nav-link" to="/">
                   Home
                 </Link>
-                <Link className="nav-link" to="/signin">
-                  SignIn
-                </Link>
-                <Link className="nav-link" to="/signup">
-                  SignUp
-                </Link>
+                {user ? (
+                  <Button variant="none">Logout</Button>
+                ) : (
+                  <>
+                    <Link className="nav-link" to="/signin">
+                      SignIn
+                    </Link>
+                    <Link className="nav-link" to="/signup">
+                      SignUp
+                    </Link>
+                  </>
+                )}
                 <Link className="nav-link" to="/blog">
                   Blog
                 </Link>

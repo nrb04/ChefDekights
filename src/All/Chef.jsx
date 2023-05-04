@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { AuthContext } from "../providers/AuthPovider";
 
 const Chef = () => {
-    return (
-        <div>
-            chefs baler PAge
-        </div>
-    );
+  const { user } = useContext(AuthContext);
+  return <div>{user.displayname} his name is</div>;
 };
 
 export default Chef;

@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "./signup.css";
+import { AuthContext } from "../providers/AuthPovider";
 const Signin = () => {
+  const { signIn } = useContext(AuthContext);
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+    signIn(email, password)
+      .then((result) => {
+        const logUser = result.user;
+        console.log(logUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div id="regibody">
       <div className="container-fluid px-1 py-5 mx-auto">
         <Row className="d-flex justify-content-center">
-          <Col xl={7} lg={8} md={9} col={11} className="text-center">
+          <Col xl={4} lg={4} md={9} col={11} className="text-center">
             <h3>REGISTRATION</h3>
             <p className="blue-text">
               Just answer a few questions
@@ -14,99 +31,50 @@ const Signin = () => {
               so that we can personalize the right experience for you.
             </p>
             <div className="card">
-              <h5 className="text-center mb-4">
-                Powering world-class companies
-              </h5>
-              <Form className="form-card" onSubmit={(e) => e.preventDefault()}>
-                <Row className="justify-content-between text-left">
-                  <Col sm={6} className="flex-column d-flex">
-                    <Form.Label className="form-control-label px-3">
-                      First name<span className="text-danger"> *</span>
-                    </Form.Label>
-                    <Form.Control
-                      type="text"
-                      id="fname"
-                      name="fname"
-                      placeholder="Enter your first name"
-                      onBlur={() => validate(1)}
+              <form onSubmit={handleLogin}>
+                <h3>Sign In</h3>
+                <div className="mb-3">
+                  <label>Email address</label>
+                  <input
+                    type="email"
+                    name="email"
+                    className="form-control"
+                    placeholder="Enter email"
+                  />
+                </div>
+                <div className="mb-3">
+                  <label>Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    className="form-control"
+                    placeholder="Enter password"
+                  />
+                </div>
+                <div className="mb-3">
+                  <div className="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      className="custom-control-input"
+                      id="customCheck1"
                     />
-                  </Col>
-                  <Col sm={6} className="flex-column d-flex">
-                    <Form.Label className="form-control-label px-3">
-                      Last name<span className="text-danger"> *</span>
-                    </Form.Label>
-                    <Form.Control
-                      type="text"
-                      id="lname"
-                      name="lname"
-                      placeholder="Enter your last name"
-                      onBlur={() => validate(2)}
-                    />
-                  </Col>
-                </Row>
-                <Row className="justify-content-between text-left">
-                  <Col sm={6} className="flex-column d-flex">
-                    <Form.Label className="form-control-label px-3">
-                      Business email<span className="text-danger"> *</span>
-                    </Form.Label>
-                    <Form.Control
-                      type="text"
-                      id="email"
-                      name="email"
-                      placeholder=""
-                      onBlur={() => validate(3)}
-                    />
-                  </Col>
-                  <Col sm={6} className="flex-column d-flex">
-                    <Form.Label className="form-control-label px-3">
-                      Phone number<span className="text-danger"> *</span>
-                    </Form.Label>
-                    <Form.Control
-                      type="text"
-                      id="mob"
-                      name="mob"
-                      placeholder=""
-                      onBlur={() => validate(4)}
-                    />
-                  </Col>
-                </Row>
-                <Row className="justify-content-between text-left">
-                  <Col sm={6} className="flex-column d-flex">
-                    <Form.Label className="form-control-label px-3">
-                      Job title<span className="text-danger"> *</span>
-                    </Form.Label>
-                    <Form.Control
-                      type="text"
-                      id="job"
-                      name="job"
-                      placeholder=""
-                      onBlur={() => validate(5)}
-                    />
-                  </Col>
-                </Row>
-                <Row className="justify-content-between text-left">
-                  <Col className="flex-column d-flex">
-                    <Form.Label className="form-control-label px-3">
-                      What would you be using Flinks for?
-                      <span className="text-danger"> *</span>
-                    </Form.Label>
-                    <Form.Control
-                      type="text"
-                      id="ans"
-                      name="ans"
-                      placeholder=""
-                      onBlur={() => validate(6)}
-                    />
-                  </Col>
-                </Row>
-                <Row className="justify-content-end">
-                  <Col sm={6}>
-                    <Button type="submit" className="btn-block btn-primary">
-                      Request a demo
-                    </Button>
-                  </Col>
-                </Row>
-              </Form>
+                    <label
+                      className="custom-control-label"
+                      htmlFor="customCheck1"
+                    >
+                      Remember me
+                    </label>
+                  </div>
+                </div>
+                <div className="d-grid">
+                  <button type="submit" className="btn btn-primary">
+                    Submit
+                  </button>
+                </div>
+                <p className="forgot-password text-right">
+                  Forgot <a href="#">password?</a>
+                </p>
+              </form>
             </div>
           </Col>
         </Row>
