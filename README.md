@@ -1,15 +1,30 @@
 
 # chef delights
-i do my try to solve problem... Qulaity and good picture not show all  
+this website is made for chef where you can find shef for your family and resturants
+ 
 
 
 
 ## FAQ
 
-#### time short
+#### Lazy load is add aftercard 
 
-need time to solve all beauty
-#### 
+#### download pdf in blog page
 
-Answer 2
+
+
+## Home snap
+
+![App Screenshot](https://images2.imgbox.com/f5/04/lMyTcKLC_o.png)
+
+
+## Roadmap
+
+- routes
+
+- - routes
+- - private routes
+- Main > nav+outlet+footer
+- Home > banner+ card(chefcards) + Xtra Section + Xtra Section
+- chef.jsx for chef details page ....
 

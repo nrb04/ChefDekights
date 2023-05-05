@@ -77,7 +77,6 @@ const Home = () => {
                 </Col>
               </Row>
             </Carousel.Item>
-            {/* Add other carousel items here */}
           </Carousel>
         </Container>
       </div>
