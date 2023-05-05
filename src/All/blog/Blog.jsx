@@ -4,6 +4,7 @@ import Carousel from "react-bootstrap/Carousel";
 import { Container, Row, Col, Button } from "react-bootstrap";
 
 import "./blog.css";
+import PdfGenerator from "./PdfGenerator";
 const Blog = () => {
   return (
     <div className="">
@@ -51,6 +52,9 @@ const Blog = () => {
           components and simplify maintenance of the codebase.
         </li>
       </Container>
+      <div className="text-center my-5">
+        <PdfGenerator></PdfGenerator>
+      </div>
     </div>
   );
 };

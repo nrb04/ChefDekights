@@ -39,7 +39,7 @@ const ChefCard = ({ card }) => {
                 </div>
 
                 <Link to={`/chef/${id}`}>
-                  <Button>See More</Button>
+                  <Button variant="outline-danger">Full Details</Button>
                 </Link>
               </div>
             </div>

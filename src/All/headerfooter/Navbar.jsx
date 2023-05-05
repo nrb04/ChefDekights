@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { Button, Nav } from "react-bootstrap";
+import { Button, Nav, Image } from "react-bootstrap";
 import { SiCodechef } from "react-icons/si";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthPovider";
-import { FcBusinessman } from "react-icons/fc";
+// import { FcBusinessman } from "react-icons/fc";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -45,6 +45,17 @@ const Navbar = () => {
               >
                 Home
               </NavLink>
+              {user && (
+                // eslint-disable-next-line react/jsx-no-undef
+                <Image
+                  className="me-2"
+                  style={{ height: "40px" }}
+                  title={user?.displayName}
+                  src={user.photoURL}
+                  roundedCircle
+                />
+              )}
+
               {user ? (
                 <NavLink
                   onClick={handleLogout}
@@ -52,7 +63,7 @@ const Navbar = () => {
                   to="/"
                   activeClassName="active"
                 >
-                  <FcBusinessman></FcBusinessman>Logout
+                  Logout
                 </NavLink>
               ) : (
                 <>

@@ -71,3 +71,29 @@
   background-position: center;
   height: 524px;
 }
+
+@media (max-width: 575px) {
+  #banner_slider a.carousel-control-prev {
+    left: 100px;
+    top: 585px;
+    display: none;
+  }
+
+  .banner_section .row {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .banner_taital_main {
+    padding-top: 0px;
+  }
+
+  .tasty_text {
+    color: #ffffff;
+  }
+
+  .about_bt {
+    width: 140px;
+    float: left;
+  }
+}

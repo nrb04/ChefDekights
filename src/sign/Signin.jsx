@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   GithubAuthProvider,
   GoogleAuthProvider,
@@ -14,7 +14,9 @@ import { AuthContext } from "../providers/AuthPovider";
 const Signin = () => {
   const { googleLogin, githubLogin, signIn } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
   const [error, setError] = useState("");
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -38,7 +40,7 @@ const Signin = () => {
       .then((result) => {
         const logUser = result.user;
         console.log(logUser);
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError("Invalid email or password.");
@@ -51,6 +53,7 @@ const Signin = () => {
       .then((result) => {
         console.log(result.user);
         setError("");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(error.message);
@@ -62,6 +65,7 @@ const Signin = () => {
       .then((result) => {
         console.log(result.user);
         setError("");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(error.message);
@@ -111,7 +115,7 @@ const Signin = () => {
                   </div>
                 </div>
                 <div className="d-grid">
-                  <button type="submit" className="btn btn-primary">
+                  <button type="submit" className="btn btn-danger">
                     Submit
                   </button>
                 </div>
@@ -125,14 +129,14 @@ const Signin = () => {
 
               <Button
                 onClick={handleGoogleLogin}
-                className="btn btn-primary my-4"
+                className="btn btn-danger my-4"
                 type="submit"
               >
                 Google Login
               </Button>
               <Button
                 onClick={handleGithubLogin}
-                className="btn btn-primary"
+                className="btn btn-danger"
                 type="submit"
               >
                 Github Login

@@ -8,7 +8,7 @@ import { RouterProvider } from "react-router-dom";
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import AuthPovider from "./providers/AuthPovider";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthPovider>

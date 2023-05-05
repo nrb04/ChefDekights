@@ -70,7 +70,7 @@ const Signup = () => {
                 </div>
 
                 <div className="d-grid mb-5">
-                  <button type="submit" className="btn btn-primary">
+                  <button type="submit" className="btn btn-danger">
                     Sign Up
                   </button>
                 </div>

@@ -31,9 +31,11 @@ const AuthPovider = ({ children }) => {
     return signInWithPopup(auth, githubProvider);
   };
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const signIn = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
   const logout = () => {
@@ -48,6 +50,7 @@ const AuthPovider = ({ children }) => {
   });
   const authInfo = {
     user,
+    loading,
     googleLogin,
     githubLogin,
     createUser,

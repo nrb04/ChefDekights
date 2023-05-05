@@ -1,58 +1,31 @@
-blockquote:before {
-    content: open-quote;
-    margin-right: 4px
+.about_section .row {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
-blockquote:after {
-    content: close-quote;
-    margin-left: 3px
+.about_section .detail-box {
+    padding-left: 10%;
 }
 
-blockquote.blockstyle,
-blockquote.style2 {
-    background: #fff;
-    font-style: italic
+.about_section .detail-box p {
+    margin-top: 20px;
 }
 
-blockquote.blockstyle p,
-blockquote.style2 p {
-    display: inline
+.about_section .detail-box a {
+    display: inline-block;
+    padding: 8px 35px;
+    background-color: #262626;
+    color: #ffffff;
+    border: 1px solid #262626;
+    margin-top: 30px;
 }
 
-blockquote.blockstyle {
-    border-left: 3px solid #f0715f;
-    position: relative;
+.about_section .detail-box a:hover {
+    background-color: transparent;
+    color: #262626;
 }
 
-blockquote.blockstyle>span.triangle:before {
-    text-indent: 0;
-    content: "\f0da";
-    font-family: FontAwesome;
-    color: #f0715f;
-    position: absolute;
-    left: -1px;
-    top: 50%;
-    margin-top: -11px;
-    font-style: normal
-}
-
-blockquote.blockstyle:before,
-blockquote.blockstyle:after {
-    color: #f0715f;
-}
-
-blockquote.blockstyle.border-color-blue {
-    border-color: #01b7f2
-}
-
-blockquote.blockstyle.border-color-blue>span.triangle:before {
-    color: #01b7f2
-}
-
-blockquote.blockstyle.border-color-yellow {
-    border-color: #fdb714
-}
-
-blockquote.blockstyle.border-color-yellow>span.triangle:before {
-    color: #fdb714
+.about_section .img-box img {
+    width: 100%;
 }

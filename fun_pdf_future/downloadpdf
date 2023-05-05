@@ -1,0 +1,51 @@
+import React from "react";
+import { PDFDownloadLink, Document, Page, Text, StyleSheet } from "@react-pdf/renderer";
+
+const PdfGenerator = () => {
+  const styles = StyleSheet.create({
+    page: {
+      fontFamily: "Helvetica",
+      fontSize: 12,
+      paddingTop: 35,
+      paddingLeft: 35,
+      paddingRight: 35,
+      paddingBottom: 40,
+    },
+    heading: {
+      fontSize: 18,
+      marginBottom: 10,
+      fontWeight: "bold",
+    },
+    content: {
+      fontSize: 12,
+      marginBottom: 8,
+    },
+  });
+
+  const MyDocument = () => (
+    <Document>
+      <Page size="A4" style={styles.page}>
+        <Text style={styles.heading}>
+          Differences Between Uncontrolled and Controlled Components
+        </Text>
+        <Text style={styles.content}>
+          The main difference between controlled and uncontrolled components is the way they handle state management and updates. Controlled components have their state managed by React and require explicit handling of user input through event handlers, while uncontrolled components allow the form data to be handled by the DOM itself.
+        </Text>
+        {/* Add other sections as needed */}
+      </Page>
+    </Document>
+  );
+
+  return (
+    <div>
+      <PDFDownloadLink document={<MyDocument />} fileName="document.pdf">
+        {({ blob, url, loading, error }) =>
+          loading ? "Loading document..." : "Download PDF"
+        }
+      </PDFDownloadLink>
+    </div>
+  );
+};
+
+export default PdfGenerator;
+

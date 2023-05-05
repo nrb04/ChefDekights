@@ -1,18 +1,39 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import LazyLoad from "react-lazyload";
 import "./ourshop.css";
+import "animate.css";
 const OurShop = () => {
   return (
     <div>
-      <section id="block_content">
-        <div className="col-md-6 container">
-          <blockquote className="blockstyle">
-            <span className="triangle"></span>
-            The Kadence Importer allows you to easily import all including
-            images, from any of our Kadence themes demos. When you install a
-            Kadence theme, the importer will automatically see what theme you
-            are using and give you options to import anyone of those themes
-          </blockquote>
+      <section className="about_section">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-md-5 offset-md-1">
+              <div className="detail-box">
+                <div className="heading_container">
+                  <h2>
+                    About <br />
+                    Our <br />
+                    Food
+                  </h2>
+                  <hr />
+                </div>
+                <p>
+                  There are many variations of passages but here actually show
+                  to lazy load. i try to give my best to this image will lazy
+                  and she will be loading .. dont worry she will load
+                </p>
+                <a> for more</a>
+              </div>
+            </div>
+            <div className="col-md-6 px-0">
+              <LazyLoad>
+                <div className="img-box">
+                  <img src="/images/about-img.jpg" alt="" />
+                </div>
+              </LazyLoad>
+            </div>
+          </div>
         </div>
       </section>
     </div>
