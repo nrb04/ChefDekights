@@ -23,7 +23,7 @@ const OurShop = () => {
                   to lazy load. i try to give my best to this image will lazy
                   and she will be loading .. dont worry she will load
                 </p>
-                <a> for more</a>
+                <button className="btn btn-rounded btn-danger">for more</button>
               </div>
             </div>
             <div className="col-md-6 px-0">
